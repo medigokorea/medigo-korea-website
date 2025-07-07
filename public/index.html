@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medigo Korea - Medical Tourism Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .status {
+            background: rgba(0,255,0,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .links {
+            margin-top: 30px;
+        }
+        .links a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin: 0 10px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .links a:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏥 Medigo Korea</h1>
+        <p>Medical Tourism Platform</p>
+        
+        <div class="status">
+            ✅ Vercel Deployment Successful<br>
+            🌐 Custom Domain Ready: www.medigokorea.kr
+        </div>
+        
+        <p>The React application will be restored in the next update.</p>
+        
+        <div class="links">
+            <a href="/api/health">API Health Check</a>
+            <a href="#" onclick="testAPI()">Test API</a>
+        </div>
+        
+        <div id="api-result" style="margin-top: 20px; font-size: 0.9em;"></div>
+    </div>
+
+    <script>
+        async function testAPI() {
+            try {
+                const response = await fetch('/api/health');
+                const data = await response.json();
+                document.getElementById('api-result').innerHTML = 
+                    '<div style="background: rgba(0,255,0,0.2); padding: 10px; border-radius: 5px;">' +
+                    '✅ API Working: ' + JSON.stringify(data) + '</div>';
+            } catch (error) {
+                document.getElementById('api-result').innerHTML = 
+                    '<div style="background: rgba(255,0,0,0.2); padding: 10px; border-radius: 5px;">' +
+                    '❌ API Error: ' + error.message + '</div>';
+            }
+        }
+        
+        // Auto-test API on load
+        setTimeout(testAPI, 1000);
+    </script>
+</body>
+</html>
