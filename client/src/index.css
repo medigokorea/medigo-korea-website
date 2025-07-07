@@ -1,0 +1,577 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mayo Clinic-inspired typography */
+.logo-font {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.heading-font {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.body-font {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Apply Mayo Clinic-style body font as default */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #1e1e1e;
+  font-feature-settings: "kern" 1;
+  text-rendering: optimizeLegibility;
+}
+
+/* Medical Typography - Mayo Display & Sans System */
+.medical-text {
+  font-family: "mayo-sans", "Times New Roman", sans-serif;
+  font-size: 1rem; /* 16px */
+  font-weight: 400;
+  line-height: 1.6;
+  color: #374151;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Chinese Font System - Applied automatically when language is set to Chinese */
+[data-language="cn"] * {
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', 'Alibaba PuHuiTi', sans-serif !important;
+}
+
+[data-language="cn"] .heading-font,
+[data-language="cn"] .logo-font,
+[data-language="cn"] .medical-text,
+[data-language="cn"] .body-font {
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', 'Alibaba PuHuiTi', sans-serif !important;
+}
+
+/* Chinese Font Family */
+.chinese-font {
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', 'Alibaba PuHuiTi', sans-serif;
+}
+
+/* Language-specific font families */
+[data-language="cn"] {
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', 'Alibaba PuHuiTi', sans-serif;
+}
+
+[data-language="cn"] * {
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', 'Alibaba PuHuiTi', sans-serif !important;
+}
+
+[data-language="cn"] .medical-heading {
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', 'Alibaba PuHuiTi', sans-serif !important;
+}
+
+[data-language="cn"] .medical-text {
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', 'Alibaba PuHuiTi', sans-serif !important;
+}
+
+[data-language="cn"] h1, 
+[data-language="cn"] h2, 
+[data-language="cn"] h3, 
+[data-language="cn"] h4, 
+[data-language="cn"] h5, 
+[data-language="cn"] h6 {
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', 'Alibaba PuHuiTi', sans-serif !important;
+}
+
+[data-language="cn"] p, 
+[data-language="cn"] span, 
+[data-language="cn"] div, 
+[data-language="cn"] button, 
+[data-language="cn"] input, 
+[data-language="cn"] textarea, 
+[data-language="cn"] label {
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', 'Alibaba PuHuiTi', sans-serif !important;
+}
+
+.medical-heading {
+  font-family: "mayo-display", Georgia, serif;
+  font-size: 4.75rem; /* 76px */
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: #1f2937;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 768px) {
+  .medical-heading {
+    font-size: 3rem; /* 48px */
+  }
+}
+
+@media (max-width: 640px) {
+  .medical-heading {
+    font-size: 2.5rem; /* 40px */
+  }
+}
+
+.medical-h1 {
+  font-family: "mayo-display", Georgia, serif;
+  font-size: 4.6875rem; /* 75px */
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: #1f2937;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 768px) {
+  .medical-h1 {
+    font-size: 3.5rem; /* 56px */
+  }
+}
+
+@media (max-width: 640px) {
+  .medical-h1 {
+    font-size: 2.75rem; /* 44px */
+  }
+}
+
+.medical-h2 {
+  font-family: "mayo-display", Georgia, serif;
+  font-size: 3rem; /* 48px */
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #1f2937;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 768px) {
+  .medical-h2 {
+    font-size: 2.25rem; /* 36px */
+  }
+}
+
+@media (max-width: 640px) {
+  .medical-h2 {
+    font-size: 2rem; /* 32px */
+  }
+}
+
+.medical-h3 {
+  font-family: "mayo-display", Georgia, serif;
+  font-size: 2rem; /* 32px */
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+  color: #1f2937;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 768px) {
+  .medical-h3 {
+    font-size: 1.5rem; /* 24px */
+  }
+}
+
+.medical-subtitle {
+  font-family: "mayo-sans", "Times New Roman", sans-serif;
+  font-size: 1.125rem; /* 18px */
+  font-weight: 400;
+  line-height: 1.5;
+  color: #6b7280;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.medical-body {
+  font-family: "mayo-sans", "Times New Roman", sans-serif;
+  font-size: 1rem; /* 16px */
+  font-weight: 400;
+  line-height: 1.6;
+  color: #374151;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Professional button text */
+.btn-text {
+  font-family: "mayo-sans", "Times New Roman", sans-serif;
+  font-size: 1rem; /* 16px */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 768px) {
+  .btn-text {
+    font-size: 0.875rem; /* 14px */
+  }
+}
+
+.medical-button {
+  font-family: "mayo-sans", "Times New Roman", sans-serif;
+  font-size: 1rem; /* 16px */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 768px) {
+  .medical-button {
+    font-size: 0.875rem; /* 14px */
+  }
+}
+
+/* General button styling to ensure all buttons use mayo-sans */
+button {
+  font-family: "mayo-sans", "Times New Roman", sans-serif;
+}
+
+.btn, .button, [role="button"] {
+  font-family: "mayo-sans", "Times New Roman", sans-serif;
+}
+
+/* Override shadcn button components specifically */
+.inline-flex.items-center.justify-center, 
+.inline-flex.items-center.justify-center.whitespace-nowrap,
+button[class*="inline-flex"],
+[data-radix-collection-item],
+/* Specific shadcn button classes */
+.bg-primary,
+.bg-secondary,
+.bg-destructive,
+.bg-outline,
+.bg-ghost,
+.bg-link,
+/* Custom button classes */
+.custom-button,
+.bg-green-500,
+.bg-yellow-400,
+.bg-white {
+  font-family: "mayo-sans", "Times New Roman", sans-serif !important;
+}
+
+/* Ensure button text content uses mayo-sans */
+button *, .btn *, [role="button"] * {
+  font-family: inherit !important;
+}
+
+.medical-nav {
+  font-family: "mayo-sans", "Times New Roman", sans-serif;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 768px) {
+  .medical-nav {
+    font-size: 1rem; /* 16px */
+  }
+}
+
+/* Custom button using 4-color system */
+.custom-button {
+  background-color: var(--accent-teal);
+  color: var(--primary-white);
+  transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+  background-color: hsl(158, 75%, 32%); /* Slightly darker teal */
+}
+
+:root {
+  /* 4-Color Palette for Medical Tourism */
+  --primary-white: hsl(0, 0%, 100%);      /* Pure white - backgrounds, cards */
+  --primary-dark: hsl(220, 26%, 14%);     /* Dark gray - main text, headers */
+  --accent-teal: hsl(158, 75%, 39%);      /* Medical teal - buttons, accents */
+  --neutral-gray: hsl(220, 14%, 96%);     /* Light gray - borders, subtle backgrounds */
+
+  /* Apply 4-color system to all UI elements */
+  --background: var(--primary-white);
+  --foreground: var(--primary-dark);
+  --muted: var(--neutral-gray);
+  --muted-foreground: var(--primary-dark);
+  --popover: var(--primary-white);
+  --popover-foreground: var(--primary-dark);
+  --card: var(--primary-white);
+  --card-foreground: var(--primary-dark);
+  --border: var(--neutral-gray);
+  --input: var(--neutral-gray);
+  --primary: var(--accent-teal);
+  --primary-foreground: var(--primary-white);
+  --secondary: var(--neutral-gray);
+  --secondary-foreground: var(--primary-dark);
+  --accent: var(--neutral-gray);
+  --accent-foreground: var(--primary-dark);
+  --destructive: var(--accent-teal);
+  --destructive-foreground: var(--primary-white);
+  --ring: var(--accent-teal);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: hsl(224, 71%, 4%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(215, 28%, 17%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --popover: hsl(224, 71%, 4%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(224, 71%, 4%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(215, 28%, 17%);
+  --input: hsl(215, 28%, 17%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(215, 28%, 17%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(215, 28%, 17%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 63%, 31%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(217, 91%, 60%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Ensure all buttons use mayo-sans font */
+  button, .btn, [role="button"], input[type="button"], input[type="submit"], input[type="reset"] {
+    font-family: "mayo-sans", "Times New Roman", sans-serif !important;
+  }
+}
+
+@layer utilities {
+  .medical-blue {
+    color: hsl(217, 91%, 60%);
+  }
+  
+  .bg-medical-blue {
+    background-color: hsl(217, 91%, 60%);
+  }
+  
+  .trust-green {
+    color: hsl(158, 75%, 39%);
+  }
+  
+  .bg-trust-green {
+    background-color: hsl(158, 75%, 39%);
+  }
+  
+  .korean-gold {
+    color: hsl(38, 92%, 50%);
+  }
+  
+  .bg-korean-gold {
+    background-color: hsl(38, 92%, 50%);
+  }
+  
+  .light-gray {
+    color: hsl(210, 40%, 98%);
+  }
+  
+  .bg-light-gray {
+    background-color: hsl(210, 40%, 98%);
+  }
+  
+  .dark-gray {
+    color: hsl(220, 26%, 14%);
+  }
+  
+  .bg-dark-gray {
+    background-color: hsl(220, 26%, 14%);
+  }
+
+  .heading-font {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+  
+  .custom-button {
+    background: linear-gradient(135deg, hsl(0, 0%, 9%) 0%, hsl(0, 0%, 20%) 100%);
+    border: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  
+  .custom-button:hover {
+    background: linear-gradient(135deg, hsl(0, 0%, 15%) 0%, hsl(0, 0%, 25%) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .heading-font {
+      font-size: 1.5rem;
+      line-height: 1.3;
+    }
+    
+    .custom-button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+    }
+    
+    /* Mobile-specific spacing */
+    .mobile-padding {
+      padding: 1rem;
+    }
+    
+    .mobile-text-sm {
+      font-size: 0.875rem;
+    }
+    
+    .mobile-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .heading-font {
+      font-size: 1.25rem;
+    }
+    
+    .mobile-text-xs {
+      font-size: 0.75rem;
+    }
+    
+    .mobile-compact {
+      padding: 0.5rem;
+    }
+  }
+
+  /* Touch-friendly buttons */
+  @media (hover: none) and (pointer: coarse) {
+    .custom-button {
+      min-height: 44px;
+      padding: 0.875rem 1.75rem;
+    }
+    
+    .mobile-touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+
+  /* Fade-in animation for results */
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Beautiful quotation background */
+  .quotation-background {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+    position: relative;
+  }
+
+  .quotation-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(0, 159, 148, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(0, 159, 148, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(31, 41, 55, 0.02) 0%, transparent 50%);
+    z-index: 1;
+  }
+
+  .quotation-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      linear-gradient(45deg, transparent 24%, rgba(0, 159, 148, 0.01) 25%, rgba(0, 159, 148, 0.01) 26%, transparent 27%, transparent 74%, rgba(0, 159, 148, 0.01) 75%, rgba(0, 159, 148, 0.01) 76%, transparent 77%);
+    background-size: 60px 60px;
+    z-index: 2;
+  }
+
+  /* Multi-step form animations */
+  .step-slide-enter {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  
+  .step-slide-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .step-slide-exit {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .step-slide-exit-active {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Enhanced mobile touch targets */
+  .mobile-touch-target {
+    min-height: 48px;
+    min-width: 48px;
+  }
+
+  /* Checkbox enhancements */
+  .checkbox-option {
+    transition: all 0.2s ease;
+  }
+  
+  .checkbox-option:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
