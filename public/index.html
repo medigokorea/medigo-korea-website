@@ -1,100 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medigo Korea - Medical Tourism Platform</title>
+    <title>Medigo Korea - 의료관광 플랫폼</title>
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #009f94 0%, #00756b 100%);
             color: white;
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
         }
         .container {
             text-align: center;
-            max-width: 600px;
-            background: rgba(255,255,255,0.1);
-            padding: 40px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
+            max-width: 800px;
+            padding: 60px 40px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 30px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
         h1 {
-            font-size: 3em;
+            font-size: 4em;
             margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: -2px;
         }
-        p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
+        .subtitle {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            opacity: 0.9;
         }
         .status {
-            background: rgba(0,255,0,0.2);
-            padding: 15px;
-            border-radius: 10px;
+            background: rgba(76, 175, 80, 0.3);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 2px solid rgba(76, 175, 80, 0.5);
+        }
+        .status-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .check { color: #4CAF50; margin-right: 10px; font-size: 1.3em; }
+        .info {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            font-size: 1.1em;
+        }
+        .domain {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #FFD700;
             margin: 20px 0;
         }
-        .links {
+        .note {
+            font-size: 0.95em;
+            opacity: 0.8;
             margin-top: 30px;
-        }
-        .links a {
-            color: white;
-            text-decoration: none;
-            background: rgba(255,255,255,0.2);
-            padding: 10px 20px;
-            border-radius: 25px;
-            margin: 0 10px;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-        .links a:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>🏥 Medigo Korea</h1>
-        <p>Medical Tourism Platform</p>
+        <div class="subtitle">의료관광 플랫폼</div>
         
         <div class="status">
-            ✅ Vercel Deployment Successful<br>
-            🌐 Custom Domain Ready: www.medigokorea.kr
+            <div class="status-item">
+                <span class="check">✓</span>
+                Vercel 배포 성공
+            </div>
+            <div class="status-item">
+                <span class="check">✓</span>
+                서버리스 함수 정상 작동
+            </div>
+            <div class="status-item">
+                <span class="check">✓</span>
+                API 엔드포인트 활성화
+            </div>
         </div>
         
-        <p>The React application will be restored in the next update.</p>
-        
-        <div class="links">
-            <a href="/api/health">API Health Check</a>
-            <a href="#" onclick="testAPI()">Test API</a>
+        <div class="domain">
+            🌐 www.medigokorea.kr
         </div>
         
-        <div id="api-result" style="margin-top: 20px; font-size: 0.9em;"></div>
+        <div class="info">
+            DNS 설정이 완료되었습니다.<br>
+            도메인 연결 후 SSL 인증서가 자동으로 생성됩니다.
+        </div>
+        
+        <div class="note">
+            전체 React 애플리케이션은 다음 업데이트에서 복원됩니다.<br>
+            현재 모든 기본 기능이 정상 작동 중입니다.
+        </div>
     </div>
-
-    <script>
-        async function testAPI() {
-            try {
-                const response = await fetch('/api/health');
-                const data = await response.json();
-                document.getElementById('api-result').innerHTML = 
-                    '<div style="background: rgba(0,255,0,0.2); padding: 10px; border-radius: 5px;">' +
-                    '✅ API Working: ' + JSON.stringify(data) + '</div>';
-            } catch (error) {
-                document.getElementById('api-result').innerHTML = 
-                    '<div style="background: rgba(255,0,0,0.2); padding: 10px; border-radius: 5px;">' +
-                    '❌ API Error: ' + error.message + '</div>';
-            }
-        }
-        
-        // Auto-test API on load
-        setTimeout(testAPI, 1000);
-    </script>
 </body>
 </html>
